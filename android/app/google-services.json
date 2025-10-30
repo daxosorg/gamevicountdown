@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "556541057639",
+    "project_id": "gamevicountdown",
+    "storage_bucket": "gamevicountdown.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:556541057639:android:182f70ca93e45cd80ad2c2",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxtHhGrEHy6FDNUIvW9xXMXwHEacNGqeY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
