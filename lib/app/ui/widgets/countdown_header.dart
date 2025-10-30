@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/app/ui/widgets/vi_widget.dart';
 
 class CountdownHeader extends StatelessWidget {
   final double headerFontSize;
@@ -15,7 +16,6 @@ class CountdownHeader extends StatelessWidget {
     Widget gtaStyledText(String text) {
       return Stack(
         children: <Widget>[
-          // Stroked text
           Text(
             text,
             style: TextStyle(
@@ -28,7 +28,6 @@ class CountdownHeader extends StatelessWidget {
                 ..color = Colors.black,
             ),
           ),
-          // Solid text
           Text(
             text,
             style: TextStyle(
@@ -42,11 +41,31 @@ class CountdownHeader extends StatelessWidget {
       );
     }
 
-    return Column(
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        gtaStyledText('game'),
-        gtaStyledText('      count'),
-        gtaStyledText('   down'),
+        const SizedBox.shrink(),
+        Stack(
+          alignment: Alignment.bottomRight,
+          clipBehavior: Clip.none,
+          children: [
+            Column(
+              children: [
+                gtaStyledText('game'),
+                gtaStyledText('      count'),
+                gtaStyledText('   down'),
+              ],
+            ),
+            const Positioned(
+              right: -50,
+              bottom: -10,
+              child: ViImage(),
+            ),
+          ],
+        ),
+        const SizedBox.shrink(),
+        const SizedBox.shrink(),
+        const SizedBox.shrink(),
       ],
     );
   }

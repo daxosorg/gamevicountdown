@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter_application_1/app/services/remote_config_service.dart';
 import 'package:get/get.dart';
+import 'package:share_plus/share_plus.dart';
 
 class CountdownController extends GetxController {
   final RemoteConfigService _remoteConfigService;
@@ -50,6 +51,11 @@ class CountdownController extends GetxController {
       minutes.value = difference.inMinutes % 60;
       seconds.value = difference.inSeconds % 60;
     }
+  }
+
+  void shareAppLink() {
+    final appLink = _remoteConfigService.appLink;
+    Share.share('Check out this app: $appLink');
   }
 
   @override

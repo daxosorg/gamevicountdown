@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ViWidget extends StatelessWidget {
-  const ViWidget({super.key});
+class ViImage extends StatelessWidget {
+  const ViImage({super.key});
 
   @override
   Widget build(BuildContext context) =>

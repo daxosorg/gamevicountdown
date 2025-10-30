@@ -8,7 +8,7 @@ class ResponsiveCountdown extends StatelessWidget {
   final int hours;
   final int minutes;
   final int seconds;
-  final Orientation orientation;
+
   final BoxConstraints constraints;
 
   const ResponsiveCountdown({
@@ -17,60 +17,50 @@ class ResponsiveCountdown extends StatelessWidget {
     required this.hours,
     required this.minutes,
     required this.seconds,
-    required this.orientation,
     required this.constraints,
   });
 
   @override
   Widget build(BuildContext context) {
-    final isPortrait = orientation == Orientation.portrait;
     final timeBlocks = [
       TimeBlock(
         value: days,
         label: kDaysLabel,
-        orientation: orientation,
         constraints: constraints,
       ),
-      TimeBlock(
-        value: hours,
-        label: kHoursLabel,
-        orientation: orientation,
-        constraints: constraints,
-      ),
-      TimeBlock(
-        value: minutes,
-        label: kMinutesLabel,
-        orientation: orientation,
-        constraints: constraints,
-      ),
-      TimeBlock(
-        value: seconds,
-        label: kSecondsLabel,
-        orientation: orientation,
-        constraints: constraints,
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          TimeBlock(
+            value: hours,
+            label: kHoursLabel,
+            constraints: constraints,
+          ),
+          const SizedBox(width: 10),
+          TimeBlock(
+            value: minutes,
+            label: kMinutesLabel,
+            constraints: constraints,
+          ),
+          const SizedBox(width: 10),
+          TimeBlock(
+            value: seconds,
+            label: kSecondsLabel,
+            constraints: constraints,
+          ),
+        ],
       ),
     ];
 
-    return isPortrait
-        ? Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: timeBlocks
-                .map((block) => Padding(
-                      padding: const EdgeInsets.only(bottom: 20),
-                      child: block,
-                    ))
-                .toList(),
-          )
-        : Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: timeBlocks
-                .map((block) => Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8),
-                      child: block,
-                    ))
-                .toList(),
-          );
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: timeBlocks
+          .map((block) => Padding(
+                padding: const EdgeInsets.only(bottom: 20),
+                child: block,
+              ))
+          .toList(),
+    );
   }
 }

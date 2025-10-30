@@ -19,7 +19,22 @@ class RemoteConfigService {
     if (releaseDateString.isNotEmpty) {
       return DateTime.parse(releaseDateString);
     }
-    // Return a default date if the config is not available
     return DateTime(2026, 5, 26);
+  }
+
+  String get bannerAdUnitId {
+    final adUnitId = _remoteConfig.getString('banner_ad_unit_id');
+    if (adUnitId.isNotEmpty) {
+      return adUnitId;
+    }
+    return 'ca-app-pub-3940256099942544/6300978111';
+  }
+
+  String get appLink {
+    final link = _remoteConfig.getString('app_link');
+    if (link.isNotEmpty) {
+      return link;
+    }
+    return 'Game countdown VI on play store';
   }
 }
