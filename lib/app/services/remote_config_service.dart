@@ -1,4 +1,5 @@
 import 'package:firebase_remote_config/firebase_remote_config.dart';
+import 'package:flutter_application_1/core/constants.dart';
 
 class RemoteConfigService {
   final FirebaseRemoteConfig _remoteConfig;
@@ -15,7 +16,7 @@ class RemoteConfigService {
   }
 
   DateTime get releaseDate {
-    final releaseDateString = _remoteConfig.getString('release_date');
+    final releaseDateString = _remoteConfig.getString(kRemoteConfigReleaseDateKey);
     if (releaseDateString.isNotEmpty) {
       return DateTime.parse(releaseDateString);
     }
@@ -23,18 +24,18 @@ class RemoteConfigService {
   }
 
   String get bannerAdUnitId {
-    final adUnitId = _remoteConfig.getString('banner_ad_unit_id');
+    final adUnitId = _remoteConfig.getString(kRemoteConfigBannerAdUnitIdKey);
     if (adUnitId.isNotEmpty) {
       return adUnitId;
     }
-    return 'ca-app-pub-3940256099942544/6300978111';
+    return kDefaultBannerAdUnitId;
   }
 
   String get appLink {
-    final link = _remoteConfig.getString('app_link');
+    final link = _remoteConfig.getString(kRemoteConfigAppLinkKey);
     if (link.isNotEmpty) {
       return link;
     }
-    return 'Game countdown VI on play store';
+    return kDefaultAppLinkDescription;
   }
 }

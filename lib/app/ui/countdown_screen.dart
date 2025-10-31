@@ -18,7 +18,7 @@ class CountdownScreen extends StatelessWidget {
         child: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/img/bg2.png'),
+              image: AssetImage(kBackgroundImagePath),
               fit: BoxFit.cover,
             ),
           ),
@@ -80,7 +80,7 @@ class CountdownScreen extends StatelessWidget {
                                 ),
                               ),
                               const Text(
-                                'Enjoy the game!',
+                                kEnjoyTheGameMessage,
                                 style: TextStyle(
                                   fontSize: 24,
                                   color: Colors.white,

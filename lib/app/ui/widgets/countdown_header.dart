@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/app/ui/widgets/vi_widget.dart';
+import 'package:flutter_application_1/core/constants.dart';
 
 class CountdownHeader extends StatelessWidget {
   final double headerFontSize;
@@ -21,7 +22,7 @@ class CountdownHeader extends StatelessWidget {
             style: TextStyle(
               height: 1,
               fontSize: headerFontSize,
-              fontFamily: 'Pricedown',
+              fontFamily: kFontPricedown,
               foreground: Paint()
                 ..style = PaintingStyle.stroke
                 ..strokeWidth = 4
@@ -33,7 +34,7 @@ class CountdownHeader extends StatelessWidget {
             style: TextStyle(
               height: 1,
               fontSize: headerFontSize,
-              fontFamily: 'Pricedown',
+              fontFamily: kFontPricedown,
               color: Colors.white,
             ),
           ),
@@ -51,9 +52,9 @@ class CountdownHeader extends StatelessWidget {
           children: [
             Column(
               children: [
-                gtaStyledText('game'),
-                gtaStyledText('      count'),
-                gtaStyledText('   down'),
+                gtaStyledText(kGameText),
+                gtaStyledText(kCountText),
+                gtaStyledText(kDownText),
               ],
             ),
             const Positioned(

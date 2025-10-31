@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/core/constants.dart';
 
 class TimeBlock extends StatelessWidget {
   final int value;
@@ -13,7 +14,7 @@ class TimeBlock extends StatelessWidget {
     required this.constraints,
   });
 
-  String _formatTime(int value) => value.toString().padLeft(2, '0');
+  String _formatTime(int value) => value.toString().padLeft(2, kPaddingChar);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class TimeBlock extends StatelessWidget {
     double fontSize = screenWidth / 6;
 
     final formattedValue =
-        label.toLowerCase() == 'days' ? value.toString() : _formatTime(value);
+        label.toLowerCase() == kDaysLabelLower ? value.toString() : _formatTime(value);
 
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
