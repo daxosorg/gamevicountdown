@@ -33,24 +33,30 @@ class TimeBlock extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(
-            formattedValue,
-            style: TextStyle(
-              fontSize: fontSize,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-              height: 1,
+          FittedBox(
+            fit: BoxFit.fitWidth,
+            child: Text(
+              formattedValue,
+              style: TextStyle(
+                fontSize: fontSize,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                height: 1,
+              ),
             ),
           ),
           // const SizedBox(height: 8),
-          Text(
-            label.toUpperCase(),
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w600,
-              color: Colors.white.withOpacity(0.9),
-              letterSpacing: 2,
-              height: 1,
+          FittedBox(
+            fit: BoxFit.fitWidth,
+            child: Text(
+              label.toUpperCase(),
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+                color: Colors.white.withOpacity(0.9),
+                letterSpacing: 2,
+                height: 1,
+              ),
             ),
           ),
         ],

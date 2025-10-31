@@ -31,22 +31,28 @@ class ResponsiveCountdown extends StatelessWidget {
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          TimeBlock(
-            value: hours,
-            label: kHoursLabel,
-            constraints: constraints,
+          Flexible(
+            child: TimeBlock(
+              value: hours,
+              label: kHoursLabel,
+              constraints: constraints,
+            ),
           ),
           const SizedBox(width: 10),
-          TimeBlock(
-            value: minutes,
-            label: kMinutesLabel,
-            constraints: constraints,
+          Flexible(
+            child: TimeBlock(
+              value: minutes,
+              label: kMinutesLabel,
+              constraints: constraints,
+            ),
           ),
           const SizedBox(width: 10),
-          TimeBlock(
-            value: seconds,
-            label: kSecondsLabel,
-            constraints: constraints,
+          Flexible(
+            child: TimeBlock(
+              value: seconds,
+              label: kSecondsLabel,
+              constraints: constraints,
+            ),
           ),
         ],
       ),
