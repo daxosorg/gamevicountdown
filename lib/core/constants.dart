@@ -41,4 +41,3 @@ const String kDaysLabelLower = 'days';
 
 // VI Widget
 const String kViImagePath = 'assets/img/vi.png';
-
